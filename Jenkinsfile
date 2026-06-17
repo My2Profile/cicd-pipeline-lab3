@@ -64,6 +64,9 @@ pipeline {
                     docker run -d \
                       --name ${CONTAINER_NAME} \
                       -p ${APP_PORT}:3000 \
+                      --memory=384m \
+                      --memory-swap=512m \
+                      --cpus=0.12 \
                       ${IMAGE_NAME}:${IMAGE_TAG}
                 '''
             }
